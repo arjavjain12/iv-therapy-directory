@@ -1,11 +1,27 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Clock, DollarSign, CheckCircle, AlertTriangle } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { DRIP_TYPE_DATA, DRIP_TYPE_LIST } from '@/data/drip-types'
 import { formatPrice } from '@/lib/utils'
+
+const DRIP_IMAGES: Record<string, string> = {
+  'hydration': 'drip-hydration.png',
+  'myers-cocktail': 'drip-myers.png',
+  'nad-plus': 'drip-nad.png',
+  'vitamin-c': 'drip-vitaminc.png',
+  'immunity': 'drip-immunity.png',
+  'hangover': 'drip-hangover.png',
+  'beauty': 'drip-beauty.png',
+  'athletic': 'drip-athletic.png',
+  'b12': 'drip-b12.png',
+  'vitamin-d': 'drip-vitamind.png',
+  'ozone': 'drip-ozone.png',
+  'detox': 'drip-detox.png',
+}
 
 export async function generateStaticParams() {
   return DRIP_TYPE_LIST.map((d) => ({ type: d.slug }))
@@ -99,6 +115,19 @@ export default async function DripTypePage({
               <p className="text-xs text-gray-500">Active ingredients</p>
             </div>
           </div>
+
+          {/* Drip image */}
+          {DRIP_IMAGES[type] && (
+            <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+              <Image
+                src={`/images/${DRIP_IMAGES[type]}`}
+                alt={`${drip.label} IV Therapy`}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
         </div>
       </div>
 

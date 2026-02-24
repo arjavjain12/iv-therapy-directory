@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 
@@ -45,6 +46,15 @@ export default function IsIVTherapySafePage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to IV therapy safety — risks, who should avoid it, and how to choose a safe provider.
           </p>
+          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/content-safe.png"
+              alt="Licensed nurse preparing IV therapy safely"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
 

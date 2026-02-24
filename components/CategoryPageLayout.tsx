@@ -1,8 +1,23 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import type { CategoryData } from '@/lib/category-data'
+
+const CATEGORY_IMAGES: Record<string, string> = {
+  'hangover': 'category-hangover.png',
+  'athletic-recovery': 'category-athletic.png',
+  'immune-boost': 'category-immune.png',
+  'anti-aging': 'category-antiaging.png',
+  'beauty': 'category-beauty.png',
+  'hydration': 'category-hydration.png',
+  'mobile': 'category-mobile.png',
+  'cold-flu': 'category-coldflu.png',
+  'weight-loss': 'category-weightloss.png',
+  'migraine': 'category-migraine.png',
+  'energy': 'category-energy.png',
+}
 
 interface CategoryPageLayoutProps {
   data: CategoryData
@@ -50,6 +65,19 @@ export default function CategoryPageLayout({ data }: CategoryPageLayoutProps) {
               </div>
             ))}
           </div>
+
+          {/* Category image */}
+          {CATEGORY_IMAGES[data.slug] && (
+            <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+              <Image
+                src={`/images/${CATEGORY_IMAGES[data.slug]}`}
+                alt={data.h1}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
         </div>
       </div>
 

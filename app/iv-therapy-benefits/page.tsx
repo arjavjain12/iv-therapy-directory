@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import BenefitsInfographic from '@/components/infographics/BenefitsInfographic'
@@ -46,6 +47,15 @@ export default function IVTherapyBenefitsPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to the benefits of intravenous nutrient therapy — from rapid hydration to cellular anti-aging.
           </p>
+          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/content-benefits.png"
+              alt="Person feeling energetic and healthy after IV therapy"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
 

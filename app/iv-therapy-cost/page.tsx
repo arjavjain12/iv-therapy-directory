@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { DEFAULT_PRICING, DRIP_TYPES, formatPrice } from '@/lib/utils'
@@ -58,6 +59,15 @@ export default function IVTherapyCostPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Everything you need to know about IV therapy pricing — by drip type, city, and factors that affect cost.
           </p>
+          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/content-cost.png"
+              alt="IV therapy pricing and cost guide"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
 

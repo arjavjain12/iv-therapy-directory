@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { DEFAULT_PRICING, formatPrice } from '@/lib/utils'
@@ -57,6 +58,15 @@ export default function HowLongDoesIVTherapyTakePage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Session duration varies by drip type. Basic hydration takes 30 minutes. NAD+ takes 60–90 minutes. Here&apos;s the full breakdown.
           </p>
+          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
+            <Image
+              src="/images/content-howlong.png"
+              alt="Person relaxing during an IV therapy session"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
 

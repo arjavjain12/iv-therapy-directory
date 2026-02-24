@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Search, Shield, Clock, MapPin, ArrowRight, CheckCircle, Droplets } from 'lucide-react'
 import { STATE_NAMES } from '@/lib/utils'
 import { getPopularCities } from '@/lib/supabase'
@@ -24,52 +25,67 @@ export default async function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(8,145,178,0.12),transparent)]" />
 
         <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">
-              <Droplets className="h-3.5 w-3.5" />
-              The #1 IV therapy directory
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
+            <div>
+              <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm font-medium text-sky-700">
+                <Droplets className="h-3.5 w-3.5" />
+                The #1 IV therapy directory
+              </span>
 
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              Find IV Therapy Clinics{' '}
-              <span className="text-sky-600">Near You</span>
-            </h1>
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+                Find IV Therapy Clinics{' '}
+                <span className="text-sky-600">Near You</span>
+              </h1>
 
-            <p className="mt-6 text-lg leading-relaxed text-gray-600">
-              Compare IV therapy clinics, IV bars, and mobile IV services in your city.
-              Hangover recovery, Myers&apos; Cocktail, NAD+, immunity drips, and more.
-            </p>
+              <p className="mt-6 text-lg leading-relaxed text-gray-600">
+                Compare IV therapy clinics, IV bars, and mobile IV services in your city.
+                Hangover recovery, Myers&apos; Cocktail, NAD+, immunity drips, and more.
+              </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/iv-therapy"
-                className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-              >
-                <Search className="h-5 w-5" />
-                Find by City
-              </Link>
-              <Link
-                href="/iv-drip-types"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-sky-600 px-8 py-3.5 text-base font-semibold text-sky-700 transition hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-              >
-                <Droplets className="h-5 w-5" />
-                View Drip Types
-              </Link>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/iv-therapy"
+                  className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-8 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >
+                  <Search className="h-5 w-5" />
+                  Find by City
+                </Link>
+                <Link
+                  href="/iv-drip-types"
+                  className="inline-flex items-center gap-2 rounded-lg border-2 border-sky-600 px-8 py-3.5 text-base font-semibold text-sky-700 transition hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >
+                  <Droplets className="h-5 w-5" />
+                  View Drip Types
+                </Link>
+              </div>
+
+              {/* Trust bar */}
+              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-gray-500">
+                {[
+                  '31,000+ cities covered',
+                  'Licensed RN administered',
+                  'Free quotes',
+                  'Mobile IV available',
+                ].map((item) => (
+                  <span key={item} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-sky-500" />
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            {/* Trust bar */}
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-gray-500 justify-center">
-              {[
-                '31,000+ cities covered',
-                'Licensed RN administered',
-                'Free quotes',
-                'Mobile IV available',
-              ].map((item) => (
-                <span key={item} className="flex items-center gap-1.5">
-                  <CheckCircle className="h-4 w-4 text-sky-500" />
-                  {item}
-                </span>
-              ))}
+            {/* Hero image */}
+            <div className="relative hidden lg:block">
+              <Image
+                src="/images/hero-homepage.png"
+                alt="Person relaxing comfortably in a modern IV therapy lounge"
+                width={620}
+                height={415}
+                className="rounded-2xl shadow-2xl object-cover w-full"
+                priority
+              />
             </div>
           </div>
         </div>
