@@ -1,0 +1,15 @@
+import type { Metadata } from 'next'
+import { CATEGORY_DATA } from '@/lib/category-data'
+import CategoryPageLayout from '@/components/CategoryPageLayout'
+
+const data = CATEGORY_DATA['pots']
+
+export const metadata: Metadata = {
+  title: data.metaTitle,
+  description: data.metaDescription,
+  alternates: { canonical: '/iv-therapy/pots' },
+}
+
+export default function POTSIVPage() {
+  return <CategoryPageLayout data={data} />
+}
