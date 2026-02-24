@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivtherapylisting.com'
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -18,10 +20,10 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Bingbot', allow: '/' },
     ],
     sitemap: [
-      'https://ivtherapylisting.com/sitemap.xml',
-      'https://ivtherapylisting.com/api/cities-sitemap.xml',
-      'https://ivtherapylisting.com/api/businesses-sitemap.xml',
-      'https://ivtherapylisting.com/api/drip-city-sitemap.xml',
+      `${BASE_URL}/sitemap.xml`,
+      `${BASE_URL}/api/cities-sitemap.xml`,
+      `${BASE_URL}/api/businesses-sitemap.xml`,
+      `${BASE_URL}/api/drip-city-sitemap.xml`,
     ],
   }
 }

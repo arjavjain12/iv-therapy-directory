@@ -74,6 +74,14 @@ const URLS = [
   `${HOST}/iv-therapy/migraine`,
   `${HOST}/iv-therapy/energy`,
   `${HOST}/iv-therapy/pots`,
+  `${HOST}/iv-therapy-for-chronic-fatigue`,
+  `${HOST}/iv-therapy-for-anxiety`,
+  `${HOST}/iv-therapy-for-jet-lag`,
+  `${HOST}/iv-therapy-for-altitude-sickness`,
+  `${HOST}/iv-therapy-for-inflammation`,
+  `${HOST}/iv-therapy-for-morning-sickness`,
+  `${HOST}/iv-therapy-for-fibromyalgia`,
+  `${HOST}/iv-therapy-for-long-covid`,
 ]
 
 console.log(`🚀  Submitting ${URLS.length} URLs to IndexNow…`)
