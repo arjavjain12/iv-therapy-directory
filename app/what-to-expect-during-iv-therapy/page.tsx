@@ -40,9 +40,9 @@ export default function WhatToExpectDuringIVTherapyPage() {
     description: 'Step-by-step guide to your first IV therapy session — from arrival and intake to insertion, infusion, and aftercare. Know exactly what happens.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivtherapylisting.com/what-to-expect-during-iv-therapy' },
+    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/what-to-expect-during-iv-therapy' },
   }
 
   const howToLd = {

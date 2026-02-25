@@ -26,9 +26,9 @@ export default function IsIVTherapySafePage() {
     description: 'Is IV therapy safe? Learn about risks, what makes IV therapy safe, who should avoid it, and how to choose a reputable provider. Evidence-based safety guide.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivtherapylisting.com/is-iv-therapy-safe' },
+    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/is-iv-therapy-safe' },
   }
 
   return (

@@ -93,7 +93,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">10. Contact</h2>
           <p className="text-gray-700">
-            Questions about these terms? Contact us at legal@ivtherapylisting.com.
+            Questions about these terms? Contact us at legal@ivlist.com.
           </p>
         </section>
       </div>

@@ -74,7 +74,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">6. Your Rights</h2>
           <p className="text-gray-700">
-            You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at privacy@ivtherapylisting.com. We will respond to your request within 30 days.
+            You have the right to access, correct, or delete your personal information. To exercise these rights, please contact us at privacy@ivlist.com. We will respond to your request within 30 days.
           </p>
         </section>
 
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">9. Contact Us</h2>
           <p className="text-gray-700">
-            If you have questions about this privacy policy, please contact us at privacy@ivtherapylisting.com.
+            If you have questions about this privacy policy, please contact us at privacy@ivlist.com.
           </p>
         </section>
       </div>

@@ -27,9 +27,9 @@ export default function IVTherapyBenefitsPage() {
     description: 'Discover the proven benefits of IV therapy: 100% bioavailability, fast hydration, immune support, anti-aging, and more. Evidence-based guide.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivtherapylisting.com/iv-therapy-benefits' },
+    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/iv-therapy-benefits' },
   }
 
   return (

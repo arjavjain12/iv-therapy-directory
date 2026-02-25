@@ -40,9 +40,9 @@ export default function HowToPrepareForIVTherapyPage() {
     description: 'Complete guide to preparing for your IV therapy session. What to eat, drink, wear, and disclose to your provider before your first IV drip.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivtherapylisting.com/how-to-prepare-for-iv-therapy' },
+    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/how-to-prepare-for-iv-therapy' },
   }
 
   const howToLd = {

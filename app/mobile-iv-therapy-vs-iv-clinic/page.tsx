@@ -24,9 +24,9 @@ export default function MobileIVVsClinicPage() {
     description: 'Mobile IV therapy vs IV clinic: compare cost, convenience, safety, availability, and drip selection. Find out which option is right for you.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivtherapylisting.com' },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivtherapylisting.com/mobile-iv-therapy-vs-iv-clinic' },
+    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/mobile-iv-therapy-vs-iv-clinic' },
   }
 
   return (

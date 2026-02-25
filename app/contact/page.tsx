@@ -29,19 +29,19 @@ export default function ContactPage() {
             <div className="space-y-4 text-gray-700">
               <div>
                 <p className="font-semibold text-gray-900">General Inquiries</p>
-                <p className="text-sm">hello@ivtherapylisting.com</p>
+                <p className="text-sm">hello@ivlist.com</p>
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Business Listings</p>
-                <p className="text-sm">listings@ivtherapylisting.com</p>
+                <p className="text-sm">listings@ivlist.com</p>
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Partnerships & Advertising</p>
-                <p className="text-sm">partners@ivtherapylisting.com</p>
+                <p className="text-sm">partners@ivlist.com</p>
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Content Corrections</p>
-                <p className="text-sm">If you notice incorrect information about a listing or page, please email us at corrections@ivtherapylisting.com</p>
+                <p className="text-sm">If you notice incorrect information about a listing or page, please email us at corrections@ivlist.com</p>
               </div>
             </div>
           </div>
@@ -51,9 +51,9 @@ export default function ContactPage() {
             <div className="space-y-4">
               {[
                 { q: 'How do I list my business?', a: 'Visit our List Your Business page to submit a free or paid listing.' },
-                { q: 'How do I update my listing?', a: 'Email listings@ivtherapylisting.com with your business name, city, and the changes you\'d like made.' },
-                { q: 'How do I remove my listing?', a: 'Email listings@ivtherapylisting.com with your business name and a removal request. We\'ll process it within 24 hours.' },
-                { q: 'Is the directory information accurate?', a: 'We make every effort to maintain accurate listings. If you spot an error, please email corrections@ivtherapylisting.com.' },
+                { q: 'How do I update my listing?', a: 'Email listings@ivlist.com with your business name, city, and the changes you\'d like made.' },
+                { q: 'How do I remove my listing?', a: 'Email listings@ivlist.com with your business name and a removal request. We\'ll process it within 24 hours.' },
+                { q: 'Is the directory information accurate?', a: 'We make every effort to maintain accurate listings. If you spot an error, please email corrections@ivlist.com.' },
               ].map((item) => (
                 <div key={item.q}>
                   <p className="font-semibold text-gray-900 text-sm">{item.q}</p>

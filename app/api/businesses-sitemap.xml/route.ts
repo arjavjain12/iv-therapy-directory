@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextResponse } from 'next/server'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivtherapylisting.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 86400 // 24 hours

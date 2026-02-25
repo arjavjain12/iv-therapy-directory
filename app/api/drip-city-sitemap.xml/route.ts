@@ -1,7 +1,7 @@
 import { getClient, isConfigured } from '@/lib/supabase'
 import { DRIP_TYPE_DATA } from '@/data/drip-types'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivtherapylisting.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 const DRIP_SLUGS = Object.keys(DRIP_TYPE_DATA)
 
 export async function GET() {

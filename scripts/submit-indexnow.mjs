@@ -20,7 +20,7 @@ const envVars = Object.fromEntries(
     .map((l) => { const i = l.indexOf('='); return [l.slice(0, i).trim(), l.slice(i + 1).trim()] })
 )
 
-const HOST = (envVars['NEXT_PUBLIC_SITE_URL'] || 'https://ivtherapylisting.com').replace(/\/$/, '')
+const HOST = (envVars['NEXT_PUBLIC_SITE_URL'] || 'https://ivlist.com').replace(/\/$/, '')
 const KEY = 'ivtherapylisting2026'
 const KEY_LOCATION = `${HOST}/${KEY}.txt`
 

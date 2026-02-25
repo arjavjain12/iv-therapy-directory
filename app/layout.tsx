@@ -41,27 +41,27 @@ const organizationSchema = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://ivtherapylisting.com/#organization',
+      '@id': 'https://ivlist.com/#organization',
       name: 'IVTherapyListing',
-      url: 'https://ivtherapylisting.com',
+      url: 'https://ivlist.com',
       description: 'The largest directory of IV therapy clinics and mobile IV services in the United States.',
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'hello@ivtherapylisting.com',
+        email: 'hello@ivlist.com',
         contactType: 'customer support',
       },
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://ivtherapylisting.com/#website',
-      url: 'https://ivtherapylisting.com',
+      '@id': 'https://ivlist.com/#website',
+      url: 'https://ivlist.com',
       name: 'IVTherapyListing',
-      publisher: { '@id': 'https://ivtherapylisting.com/#organization' },
+      publisher: { '@id': 'https://ivlist.com/#organization' },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://ivtherapylisting.com/iv-therapy/{search_term_string}',
+          urlTemplate: 'https://ivlist.com/iv-therapy/{search_term_string}',
         },
         'query-input': 'required name=search_term_string',
       },
