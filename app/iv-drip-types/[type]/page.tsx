@@ -118,15 +118,14 @@ export default async function DripTypePage({
 
           {/* Drip image */}
           {DRIP_IMAGES[type] && (
-            <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-              <Image
-                src={`/images/${DRIP_IMAGES[type]}`}
-                alt={`${drip.label} IV Therapy`}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src={`/images/${DRIP_IMAGES[type]}`}
+              alt={`${drip.label} IV Therapy`}
+              width={900}
+              height={600}
+              className="mt-6 w-full h-auto rounded-2xl"
+              priority
+            />
           )}
         </div>
       </div>

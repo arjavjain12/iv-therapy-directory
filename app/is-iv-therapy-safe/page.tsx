@@ -46,15 +46,14 @@ export default function IsIVTherapySafePage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to IV therapy safety — risks, who should avoid it, and how to choose a safe provider.
           </p>
-          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-            <Image
-              src="/images/content-safe.png"
-              alt="Licensed nurse preparing IV therapy safely"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/content-safe.png"
+            alt="Licensed nurse preparing IV therapy safely"
+            width={1200}
+            height={675}
+            className="mt-6 w-full h-auto rounded-2xl"
+            priority
+          />
         </div>
       </div>
 

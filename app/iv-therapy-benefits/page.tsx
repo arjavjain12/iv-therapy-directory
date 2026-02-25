@@ -47,15 +47,14 @@ export default function IVTherapyBenefitsPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to the benefits of intravenous nutrient therapy — from rapid hydration to cellular anti-aging.
           </p>
-          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-            <Image
-              src="/images/content-benefits.png"
-              alt="Person feeling energetic and healthy after IV therapy"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/content-benefits.png"
+            alt="Person feeling energetic and healthy after IV therapy"
+            width={1200}
+            height={675}
+            className="mt-6 w-full h-auto rounded-2xl"
+            priority
+          />
         </div>
       </div>
 

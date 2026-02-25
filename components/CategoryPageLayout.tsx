@@ -68,15 +68,14 @@ export default function CategoryPageLayout({ data }: CategoryPageLayoutProps) {
 
           {/* Category image */}
           {CATEGORY_IMAGES[data.slug] && (
-            <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-              <Image
-                src={`/images/${CATEGORY_IMAGES[data.slug]}`}
-                alt={data.h1}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <Image
+              src={`/images/${CATEGORY_IMAGES[data.slug]}`}
+              alt={data.h1}
+              width={900}
+              height={600}
+              className="mt-6 w-full h-auto rounded-2xl"
+              priority
+            />
           )}
         </div>
       </div>

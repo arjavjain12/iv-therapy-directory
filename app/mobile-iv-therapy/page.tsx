@@ -50,15 +50,14 @@ export default function MobileIVTherapyPage() {
             ))}
           </div>
 
-          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-            <Image
-              src="/images/hero-mobile.png"
-              alt="Professional nurse arriving at home with medical bag for mobile IV therapy"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/hero-mobile.png"
+            alt="Professional nurse arriving at home with medical bag for mobile IV therapy"
+            width={1200}
+            height={675}
+            className="mt-6 w-full h-auto rounded-2xl"
+            priority
+          />
         </div>
       </div>
 

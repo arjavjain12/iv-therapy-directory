@@ -59,15 +59,14 @@ export default function IVTherapyCostPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Everything you need to know about IV therapy pricing — by drip type, city, and factors that affect cost.
           </p>
-          <div className="mt-6 relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden">
-            <Image
-              src="/images/content-cost.png"
-              alt="IV therapy pricing and cost guide"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/content-cost.png"
+            alt="IV therapy pricing and cost guide"
+            width={1200}
+            height={675}
+            className="mt-6 w-full h-auto rounded-2xl"
+            priority
+          />
         </div>
       </div>
 
