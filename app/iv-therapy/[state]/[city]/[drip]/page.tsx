@@ -78,15 +78,9 @@ export async function generateMetadata({
   }
 }
 
+// Returns empty — uses dynamicParams=true for on-demand ISR rendering.
 export async function generateStaticParams() {
-  const cities = await getTopCitySlugsByPopulation(100000)
-  const params = []
-  for (const c of cities) {
-    for (const dripSlug of DRIP_SLUGS) {
-      params.push({ state: c.state_slug, city: c.city_slug, drip: dripSlug })
-    }
-  }
-  return params
+  return []
 }
 
 export default async function CityDripPage({
