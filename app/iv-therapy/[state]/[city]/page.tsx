@@ -56,6 +56,8 @@ export async function generateMetadata({
   }
 }
 
+export const dynamicParams = true
+
 export async function generateStaticParams() {
   const slugs = await getAllCitySlugs()
   return slugs.map((c: { state_slug: string; city_slug: string }) => ({

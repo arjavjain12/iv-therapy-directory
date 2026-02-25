@@ -32,6 +32,8 @@ export async function generateMetadata({
   }
 }
 
+export const dynamicParams = true
+
 export async function generateStaticParams() {
   const states = await getAllStates()
   return states.map((s: { state_slug: string }) => ({ state: s.state_slug }))
