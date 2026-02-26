@@ -187,7 +187,7 @@ export default async function Home() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Why Use IVTherapyListing?
+            Why Use IVList?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-gray-500">
             We make it simple to find the right IV therapy provider at the right price.

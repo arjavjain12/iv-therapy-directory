@@ -40,8 +40,8 @@ export default function HowOftenShouldYouGetIVTherapyPage() {
     description: "How often to get IV therapy depends on your health goal. Hangover recovery: as needed. Wellness: monthly. NAD+ anti-aging: 4-session protocol. Complete frequency guide.",
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/how-often-should-you-get-iv-therapy' },
   }
 

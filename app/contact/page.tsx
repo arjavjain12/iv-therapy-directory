@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Contact IVTherapyListing — Get in Touch',
-  description: 'Contact IVTherapyListing with questions about listings, partnerships, or content.',
+  title: 'Contact IVList — Get in Touch',
+  description: 'Contact IVList with questions about listings, partnerships, or content.',
   alternates: { canonical: '/contact' },
 }
 

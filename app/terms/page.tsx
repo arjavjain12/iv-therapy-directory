@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — IVTherapyListing',
-  description: 'Terms of service for IVTherapyListing.com.',
+  title: 'Terms of Service — IVList',
+  description: 'Terms of service for IVList.com.',
   alternates: { canonical: '/terms' },
 }
 
@@ -27,28 +27,28 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">1. Acceptance of Terms</h2>
           <p className="text-gray-700">
-            By accessing and using IVTherapyListing.com, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.
+            By accessing and using IVList.com, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900">2. Description of Service</h2>
           <p className="text-gray-700">
-            IVTherapyListing provides an online directory of IV therapy businesses across the United States. We provide informational content about IV therapy treatments, pricing, and providers. We are not a healthcare provider and do not provide medical advice.
+            IVList provides an online directory of IV therapy businesses across the United States. We provide informational content about IV therapy treatments, pricing, and providers. We are not a healthcare provider and do not provide medical advice.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900">3. Medical Disclaimer</h2>
           <p className="text-gray-700">
-            The content on IVTherapyListing.com is for informational purposes only and is not intended as medical advice. IV therapy involves medical procedures that should be performed by licensed healthcare professionals. Always consult with a qualified healthcare provider before pursuing IV therapy. We make no representations regarding the safety or efficacy of any specific IV treatment.
+            The content on IVList.com is for informational purposes only and is not intended as medical advice. IV therapy involves medical procedures that should be performed by licensed healthcare professionals. Always consult with a qualified healthcare provider before pursuing IV therapy. We make no representations regarding the safety or efficacy of any specific IV treatment.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900">4. Business Listings</h2>
           <p className="text-gray-700">
-            Businesses listed on our directory are independent third-party providers. IVTherapyListing does not endorse, recommend, or guarantee the quality, safety, or legality of any listed business or its services. We are not responsible for any harm, injury, or dissatisfaction arising from services provided by listed businesses.
+            Businesses listed on our directory are independent third-party providers. IVList does not endorse, recommend, or guarantee the quality, safety, or legality of any listed business or its services. We are not responsible for any harm, injury, or dissatisfaction arising from services provided by listed businesses.
           </p>
           <p className="text-gray-700">
             Businesses that submit listings represent that they operate legally, employ licensed healthcare professionals, and maintain appropriate liability insurance. We reserve the right to remove any listing at our discretion.
@@ -65,21 +65,21 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900">6. Lead Forms</h2>
           <p className="text-gray-700">
-            When you submit a lead form requesting quotes, you authorize IVTherapyListing to share your contact information with local IV therapy providers who may contact you. Submitting a form does not create any obligation to purchase services.
+            When you submit a lead form requesting quotes, you authorize IVList to share your contact information with local IV therapy providers who may contact you. Submitting a form does not create any obligation to purchase services.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900">7. Intellectual Property</h2>
           <p className="text-gray-700">
-            All content on IVTherapyListing.com, including text, graphics, logos, and data compilations, is the property of IVTherapyListing or its content suppliers. You may not reproduce, distribute, or create derivative works from our content without written permission.
+            All content on IVList.com, including text, graphics, logos, and data compilations, is the property of IVList or its content suppliers. You may not reproduce, distribute, or create derivative works from our content without written permission.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900">8. Limitation of Liability</h2>
           <p className="text-gray-700">
-            IVTherapyListing shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the site or services obtained through the site. Our total liability shall not exceed $100.
+            IVList shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the site or services obtained through the site. Our total liability shall not exceed $100.
           </p>
         </section>
 

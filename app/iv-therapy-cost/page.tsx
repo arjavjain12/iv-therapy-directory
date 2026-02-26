@@ -39,8 +39,8 @@ export default function IVTherapyCostPage() {
     description: 'Complete IV therapy pricing guide. Average costs by drip type: hydration ($99–$175), Myers\' Cocktail ($149–$275), NAD+ ($250–$500). What affects pricing and how to save.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/iv-therapy-cost' },
   }
 

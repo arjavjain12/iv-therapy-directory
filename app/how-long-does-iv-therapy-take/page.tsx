@@ -38,8 +38,8 @@ export default function HowLongDoesIVTherapyTakePage() {
     description: 'How long does IV therapy take? Basic hydration takes 30 minutes. Myers\' Cocktail takes 45-60 min. NAD+ takes 60-90 min. Full duration guide by drip type.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/how-long-does-iv-therapy-take' },
   }
 

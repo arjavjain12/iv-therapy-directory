@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — IVTherapyListing',
-  description: 'Privacy policy for IVTherapyListing.com. Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy — IVList',
+  description: 'Privacy policy for IVList.com. Learn how we collect, use, and protect your personal information.',
   alternates: { canonical: '/privacy' },
 }
 

@@ -22,8 +22,8 @@ export default function IVTherapyDirectoryPage() {
     description: 'Browse IV therapy clinics and mobile IV services across all 50 US states. Find hangover recovery, Myers\' Cocktail, NAD+, and more near you.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/iv-therapy' },
   }
 

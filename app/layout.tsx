@@ -9,20 +9,27 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'IVTherapyListing — Find IV Therapy Clinics & Mobile IV Near You',
-    template: '%s | IVTherapyListing',
+    default: 'IVList — Find IV Therapy Clinics & Mobile IV Near You',
+    template: '%s | IVList',
   },
   description:
     'Find and compare IV therapy clinics, IV bars, and mobile IV services in your city. Get free quotes on hangover recovery, Myers\' Cocktail, NAD+, and more.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   openGraph: {
     type: 'website',
-    siteName: 'IVTherapyListing',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'IVTherapyListing — Find IV Therapy Near You' }],
+    siteName: 'IVList',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'IVList — Find IV Therapy Near You' }],
   },
   twitter: {
     card: 'summary_large_image',
     images: ['/og-image.png'],
+  },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: '/apple-icon.png',
   },
   robots: {
     index: true,
@@ -42,7 +49,7 @@ const organizationSchema = {
     {
       '@type': 'Organization',
       '@id': 'https://ivlist.com/#organization',
-      name: 'IVTherapyListing',
+      name: 'IVList',
       url: 'https://ivlist.com',
       description: 'The largest directory of IV therapy clinics and mobile IV services in the United States.',
       contactPoint: {
@@ -55,7 +62,7 @@ const organizationSchema = {
       '@type': 'WebSite',
       '@id': 'https://ivlist.com/#website',
       url: 'https://ivlist.com',
-      name: 'IVTherapyListing',
+      name: 'IVList',
       publisher: { '@id': 'https://ivlist.com/#organization' },
       potentialAction: {
         '@type': 'SearchAction',

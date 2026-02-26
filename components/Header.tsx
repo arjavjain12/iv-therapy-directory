@@ -12,7 +12,7 @@ export default function Header() {
               <Droplets className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl text-gray-900">
-              IVTherapy<span className="text-sky-600">Listing</span>
+              IV<span className="text-sky-600">List</span>
             </span>
           </Link>
 

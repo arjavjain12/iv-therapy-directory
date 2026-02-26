@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'About IVTherapyListing — The IV Therapy Directory',
-  description: 'IVTherapyListing is the most comprehensive directory of IV therapy clinics, IV bars, and mobile IV services across the United States.',
+  title: 'About IVList — The IV Therapy Directory',
+  description: 'IVList is the most comprehensive directory of IV therapy clinics, IV bars, and mobile IV services across the United States.',
   alternates: { canonical: '/about' },
 }
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
             { label: 'About' },
           ]} />
           <h1 className="mt-4 text-3xl sm:text-4xl font-extrabold text-gray-900">
-            About IVTherapyListing
+            About IVList
           </h1>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         <div className="prose prose-gray max-w-none">
           <p className="text-lg text-gray-700 leading-relaxed">
-            IVTherapyListing is the most comprehensive online directory of IV therapy clinics, IV bars, and mobile IV services across the United States. We help patients find safe, qualified IV therapy providers in their city — quickly and easily.
+            IVList is the most comprehensive online directory of IV therapy clinics, IV bars, and mobile IV services across the United States. We help patients find safe, qualified IV therapy providers in their city — quickly and easily.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Mission</h2>

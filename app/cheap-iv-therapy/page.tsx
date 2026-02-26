@@ -25,8 +25,8 @@ export default function CheapIVTherapyPage() {
     description: 'Find affordable IV therapy near you. Basic hydration starts at $99. Tips to save on IV therapy including memberships, first-time discounts, and comparison shopping.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/cheap-iv-therapy' },
   }
 

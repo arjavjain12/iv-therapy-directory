@@ -36,7 +36,7 @@ export default function DripTypesHubPage() {
     '@type': 'Article',
     name: 'IV Drip Types Guide',
     description: 'Compare all 8 IV therapy drip types, their ingredients, benefits, and pricing.',
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing' },
+    publisher: { '@type': 'Organization', name: 'IVList' },
   }
 
   return (

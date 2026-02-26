@@ -5,7 +5,7 @@ import ListingForm from './ListingForm'
 
 export const metadata: Metadata = {
   title: 'List Your IV Therapy Business — Get More Clients (2026)',
-  description: 'List your IV therapy clinic, IV bar, or mobile IV service on IVTherapyListing.com. Free, Verified, and Premium listing plans available. Reach patients searching for IV therapy near them.',
+  description: 'List your IV therapy clinic, IV bar, or mobile IV service on IVList.com. Free, Verified, and Premium listing plans available. Reach patients searching for IV therapy near them.',
   alternates: { canonical: '/list-your-business' },
 }
 

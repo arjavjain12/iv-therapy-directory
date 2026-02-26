@@ -62,8 +62,8 @@ export default function IVTherapyForFibromyalgiaPage() {
     description: metadata.description as string,
     datePublished: '2026-01-01',
     dateModified: '2026-02-25',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: BASE_URL },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: BASE_URL },
+    author: { '@type': 'Organization', name: 'IVList', url: BASE_URL },
+    publisher: { '@type': 'Organization', name: 'IVList', url: BASE_URL },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/iv-therapy-for-fibromyalgia` },
   }
 

@@ -40,8 +40,8 @@ export default function IVTherapySideEffectsPage() {
     description: "Complete guide to IV therapy side effects — from normal reactions (coolness, flushing) to rare risks. Know what's expected and what requires medical attention.",
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/iv-therapy-side-effects' },
   }
 

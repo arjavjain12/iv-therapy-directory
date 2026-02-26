@@ -24,8 +24,8 @@ export default function IVHydrationVsOralPage() {
     description: 'IV hydration vs drinking water: compare absorption rate, speed, cost, and best use cases. When IV hydration is worth it and when water is enough.',
     datePublished: '2026-01-01',
     dateModified: '2026-02-24',
-    author: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
-    publisher: { '@type': 'Organization', name: 'IVTherapyListing', url: 'https://ivlist.com' },
+    author: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
+    publisher: { '@type': 'Organization', name: 'IVList', url: 'https://ivlist.com' },
     mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ivlist.com/iv-hydration-vs-oral-hydration' },
   }
 

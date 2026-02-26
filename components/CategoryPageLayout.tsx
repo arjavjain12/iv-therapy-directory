@@ -34,7 +34,7 @@ export default function CategoryPageLayout({ data }: CategoryPageLayoutProps) {
     serviceType: 'IV Therapy',
     provider: {
       '@type': 'Organization',
-      name: 'IVTherapyListing',
+      name: 'IVList',
       url: process.env.NEXT_PUBLIC_SITE_URL,
     },
   }
