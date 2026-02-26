@@ -8,15 +8,26 @@ export const revalidate = 86400 // 24 hours
 
 export async function GET() {
   try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-    const { data: cities } = await supabase
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('cities-sitemap: missing Supabase env vars')
+      return new NextResponse('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
+        headers: { 'Content-Type': 'application/xml' },
+      })
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey)
+
+    const { data: cities, error } = await supabase
       .from('cities')
       .select('city_slug, state_slug, updated_at')
       .order('population', { ascending: false })
+
+    if (error) {
+      console.error('cities-sitemap Supabase error:', error)
+    }
 
     if (!cities?.length) {
       return new NextResponse('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
