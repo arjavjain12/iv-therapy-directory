@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
 export const dynamic = 'force-dynamic'
-export const revalidate = 86400 // 24 hours
 
 export async function GET() {
   try {
@@ -13,33 +12,43 @@ export async function GET() {
 
     if (!supabaseUrl || !supabaseKey) {
       console.error('cities-sitemap: missing Supabase env vars')
-      return new NextResponse('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
-        headers: { 'Content-Type': 'application/xml' },
-      })
+      return emptyXml()
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey)
 
-    const { data: cities, error } = await supabase
-      .from('cities')
-      .select('city_slug, state_slug, created_at')
-      .order('population', { ascending: false })
-      .limit(50000)
+    // Fetch all cities in batches of 1000 (Supabase max-rows limit)
+    const allCities: { city_slug: string; state_slug: string; created_at: string }[] = []
+    const PAGE_SIZE = 1000
+    let page = 0
 
-    if (error) {
-      console.error('cities-sitemap Supabase error:', error)
+    while (true) {
+      const { data, error } = await supabase
+        .from('cities')
+        .select('city_slug, state_slug, created_at')
+        .order('population', { ascending: false })
+        .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
+
+      if (error) {
+        console.error(`cities-sitemap page ${page} error:`, error)
+        break
+      }
+      if (!data || data.length === 0) break
+
+      allCities.push(...data)
+      if (data.length < PAGE_SIZE) break // last page
+      page++
     }
 
-    if (!cities?.length) {
-      return new NextResponse('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
-        headers: { 'Content-Type': 'application/xml' },
-      })
-    }
+    console.log(`cities-sitemap: fetched ${allCities.length} cities`)
 
-    const urls = cities.map((city) => `
+    if (!allCities.length) return emptyXml()
+
+    const today = new Date().toISOString().split('T')[0]
+    const urls = allCities.map((city) => `
   <url>
     <loc>${SITE_URL}/iv-therapy/${city.state_slug}/${city.city_slug}</loc>
-    <lastmod>${city.created_at ? city.created_at.split('T')[0] : new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${city.created_at ? city.created_at.split('T')[0] : today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>`).join('')
@@ -59,4 +68,11 @@ ${urls}
     console.error('cities-sitemap error:', err)
     return new NextResponse('Error generating sitemap', { status: 500 })
   }
+}
+
+function emptyXml() {
+  return new NextResponse(
+    '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>',
+    { headers: { 'Content-Type': 'application/xml' } }
+  )
 }
