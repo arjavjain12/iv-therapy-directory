@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ── Drip type pages ──────────────────────────────────────────────────────────
   const dripTypes = [
     'hydration', 'myers-cocktail', 'nad-plus', 'vitamin-c', 'immunity',
-    'hangover', 'beauty', 'athletic', 'b12', 'vitamin-d', 'ozone', 'detox',
+    'hangover', 'beauty', 'athletic', 'b12', 'vitamin-d', 'ozone', 'detox', 'glutathione',
   ]
   const dripPages: MetadataRoute.Sitemap = dripTypes.map((slug) => ({
     url: `${BASE_URL}/iv-drip-types/${slug}`,
@@ -66,6 +66,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/iv-therapy-cost-estimator`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
+  // ── New keyword gap pages (Feb 2026) ────────────────────────────────────────
+  const keywordGapPages: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/iv-therapy-for-dehydration`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/iv-therapy-at-home`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE_URL}/what-is-iv-therapy`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/iv-therapy-for-weight-loss`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+  ]
+
   // ── Condition pages ──────────────────────────────────────────────────────────
   const conditionPages: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/iv-therapy-for-chronic-fatigue`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
@@ -78,5 +86,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/iv-therapy-for-long-covid`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
-  return [...staticPages, ...dripPages, ...categoryPages, ...newContentPages, ...conditionPages]
+  return [...staticPages, ...dripPages, ...categoryPages, ...newContentPages, ...conditionPages, ...keywordGapPages]
 }

@@ -168,6 +168,20 @@ export const DRIP_TYPE_DATA: Record<string, DripType> = {
     best_for: ['Liver health and support', 'Post-alcohol liver recovery', 'Mold illness and environmental toxin exposure', 'Heavy metal detox protocols', 'Chronic alcohol use recovery', 'Pre/post-surgery liver support', 'General cellular cleansing'],
     contraindications: ['Severe liver failure (consult hepatologist)', 'Known glutathione allergy', 'Active asthma (glutathione may trigger bronchospasm)', 'Pregnancy', 'Certain chemotherapy agents (interaction risk)'],
   },
+
+  glutathione: {
+    slug: 'glutathione',
+    label: 'Glutathione IV Therapy',
+    tagline: 'The master antioxidant — skin, detox, and cellular protection',
+    description: 'Glutathione is the body\'s most powerful endogenous antioxidant, produced in every cell and essential for detoxification, immune function, and cellular protection. Oral glutathione has poor bioavailability — the gut breaks most of it down before absorption. IV glutathione delivers therapeutic concentrations directly to the bloodstream and tissues. Glutathione IV therapy is widely used for skin brightening and hyperpigmentation, liver detox support, immune enhancement, and as an anti-aging and longevity protocol. It is often added as a "push" add-on to other IV drips or administered as a standalone high-dose infusion.',
+    ingredients: ['Reduced Glutathione (GSH)', 'Normal Saline', 'Optional: Vitamin C (enhances glutathione recycling)', 'Optional: Alpha-Lipoic Acid (regenerates glutathione)', 'Optional: B-Complex'],
+    benefits: ['Skin brightening and hyperpigmentation reduction', 'Liver detoxification support', 'Cellular antioxidant protection', 'Immune system enhancement', 'Anti-aging and longevity', 'Heavy metal chelation support', 'Inflammation reduction', 'Post-illness recovery'],
+    duration: 30,
+    price_low: 100,
+    price_high: 250,
+    best_for: ['Skin brightening and tone evening', 'Hyperpigmentation and dark spots', 'Liver detox and cleansing', 'Anti-aging and longevity protocols', 'Immune support', 'Post-illness recovery', 'Biohackers and longevity enthusiasts', 'Regular wellness maintenance'],
+    contraindications: ['Known glutathione allergy (rare)', 'Active asthma (IV glutathione may trigger bronchospasm in susceptible individuals)', 'Pregnancy (consult provider)', 'Chemotherapy patients (consult oncologist — glutathione may affect drug efficacy)'],
+  },
 }
 
 export const DRIP_TYPE_LIST = Object.values(DRIP_TYPE_DATA)
