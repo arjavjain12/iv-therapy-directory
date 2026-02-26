@@ -22,8 +22,9 @@ export async function GET() {
 
     const { data: cities, error } = await supabase
       .from('cities')
-      .select('city_slug, state_slug, updated_at')
+      .select('city_slug, state_slug, created_at')
       .order('population', { ascending: false })
+      .limit(50000)
 
     if (error) {
       console.error('cities-sitemap Supabase error:', error)
@@ -38,7 +39,7 @@ export async function GET() {
     const urls = cities.map((city) => `
   <url>
     <loc>${SITE_URL}/iv-therapy/${city.state_slug}/${city.city_slug}</loc>
-    <lastmod>${city.updated_at ? city.updated_at.split('T')[0] : new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${city.created_at ? city.created_at.split('T')[0] : new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>`).join('')
