@@ -32,8 +32,7 @@ export async function generateMetadata({
   }
 }
 
-export const dynamicParams = true
-export const revalidate = false // cache forever — only regenerate on redeploy
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   const states = await getAllStates()

@@ -45,7 +45,18 @@ export async function getCitiesByState(stateSlug: string) {
 
 // Returns empty — state pages use dynamicParams=true for on-demand ISR rendering.
 export async function getAllStates() {
-  return [] as { state: string; state_slug: string }[]
+  const { data } = await getClient()
+    .from('cities')
+    .select('state, state_slug')
+    .order('state', { ascending: true })
+  if (!data) return [] as { state: string; state_slug: string }[]
+  // deduplicate by state_slug
+  const seen = new Set<string>()
+  return data.filter((r) => {
+    if (seen.has(r.state_slug)) return false
+    seen.add(r.state_slug)
+    return true
+  }) as { state: string; state_slug: string }[]
 }
 
 export async function getNearbyCities(cityId: number, lat: number, lng: number, limit = 6) {
@@ -121,7 +132,21 @@ export async function submitLead(lead: Omit<Lead, 'id' | 'created_at' | 'status'
 // Returns empty — city pages use dynamicParams=true for on-demand ISR rendering.
 // Pre-generating 31k+ pages at build time would exceed Vercel's build timeout.
 export async function getAllCitySlugs() {
-  return [] as { state_slug: string; city_slug: string }[]
+  const PAGE_SIZE = 1000
+  const all: { state_slug: string; city_slug: string }[] = []
+  let page = 0
+  while (true) {
+    const { data } = await getClient()
+      .from('cities')
+      .select('state_slug, city_slug')
+      .order('population', { ascending: false })
+      .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
+    if (!data || data.length === 0) break
+    all.push(...data)
+    if (data.length < PAGE_SIZE) break
+    page++
+  }
+  return all
 }
 
 export async function getAllBusinessSlugs() {

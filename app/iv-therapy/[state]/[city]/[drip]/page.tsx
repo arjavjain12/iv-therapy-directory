@@ -19,8 +19,7 @@ import {
 } from '@/lib/supabase'
 import { DRIP_TYPE_DATA } from '@/data/drip-types'
 
-export const dynamicParams = true
-export const revalidate = false // cache forever — only regenerate on redeploy
+export const dynamicParams = false
 
 const DRIP_SLUGS = Object.keys(DRIP_TYPE_DATA)
 
