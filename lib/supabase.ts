@@ -129,20 +129,10 @@ export async function submitLead(lead: Omit<Lead, 'id' | 'created_at' | 'status'
 // ─── Static generation helpers ───────────────────────────────────────────────
 
 export async function getAllCitySlugs() {
-  const PAGE = 1000
-  const all: { state_slug: string; city_slug: string }[] = []
-  let from = 0
-  while (true) {
-    const { data } = await getClient()
-      .from('cities')
-      .select('state_slug, city_slug')
-      .range(from, from + PAGE - 1)
-    if (!data || data.length === 0) break
-    all.push(...data)
-    if (data.length < PAGE) break
-    from += PAGE
-  }
-  return all
+  const { data } = await getClient()
+    .from('cities')
+    .select('state_slug, city_slug')
+  return data || []
 }
 
 export async function getAllBusinessSlugs() {
