@@ -20,7 +20,7 @@ import {
 import { DRIP_TYPE_DATA } from '@/data/drip-types'
 
 export const dynamicParams = true
-export const revalidate = 86400
+export const revalidate = false // cache forever — only regenerate on redeploy
 
 const DRIP_SLUGS = Object.keys(DRIP_TYPE_DATA)
 

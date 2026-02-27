@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 86400 // Vercel caches this response for 24h at CDN level
 
 export async function GET() {
   try {
