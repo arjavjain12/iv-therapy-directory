@@ -1,31 +1,8 @@
 import { MetadataRoute } from 'next'
-import { createClient } from '@supabase/supabase-js'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
-async function getAllCities() {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  )
-  const PAGE_SIZE = 1000
-  const all: { city_slug: string; state_slug: string; created_at: string }[] = []
-  let page = 0
-  while (true) {
-    const { data } = await supabase
-      .from('cities')
-      .select('city_slug, state_slug, created_at')
-      .order('population', { ascending: false })
-      .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1)
-    if (!data || data.length === 0) break
-    all.push(...data)
-    if (data.length < PAGE_SIZE) break
-    page++
-  }
-  return all
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
   // ── Static pages ─────────────────────────────────────────────────────────────
@@ -97,14 +74,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75,
   }))
 
-  // ── City pages (fetched from Supabase at build time) ──────────────────────────
-  const cities = await getAllCities()
-  const cityPages: MetadataRoute.Sitemap = cities.map((c) => ({
-    url: `${BASE_URL}/iv-therapy/${c.state_slug}/${c.city_slug}`,
-    lastModified: c.created_at ? new Date(c.created_at) : now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-
-  return [...staticPages, ...dripPages, ...categoryPages, ...cityPages]
+  return [...staticPages, ...dripPages, ...categoryPages]
 }
