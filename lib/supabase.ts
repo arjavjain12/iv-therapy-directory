@@ -17,7 +17,9 @@ export function getClient(): SupabaseClient {
   if (!url || !key || !url.startsWith('http') || url.startsWith('<')) {
     throw new Error('Supabase credentials not configured. Add them to .env.local')
   }
-  _client = createClient(url, key)
+  _client = createClient(url, key, {
+    global: { fetch: (input, init) => fetch(input, { ...init, cache: 'no-store' }) },
+  })
   return _client
 }
 
@@ -43,9 +45,17 @@ export async function getCitiesByState(stateSlug: string) {
   return data || []
 }
 
-// Returns empty — state pages use dynamicParams=true for on-demand ISR rendering.
 export async function getAllStates() {
-  return [] as { state: string; state_slug: string }[]
+  const { data } = await getClient()
+    .from('cities')
+    .select('state, state_slug')
+    .order('state')
+  const seen = new Set<string>()
+  return (data || []).filter((row) => {
+    if (seen.has(row.state_slug)) return false
+    seen.add(row.state_slug)
+    return true
+  }) as { state: string; state_slug: string }[]
 }
 
 export async function getNearbyCities(cityId: number, lat: number, lng: number, limit = 6) {
@@ -118,10 +128,21 @@ export async function submitLead(lead: Omit<Lead, 'id' | 'created_at' | 'status'
 
 // ─── Static generation helpers ───────────────────────────────────────────────
 
-// Returns empty — city pages use dynamicParams=true for on-demand ISR rendering.
-// Pre-generating 31k+ pages at build time would exceed Vercel's build timeout.
 export async function getAllCitySlugs() {
-  return [] as { state_slug: string; city_slug: string }[]
+  const PAGE = 1000
+  const all: { state_slug: string; city_slug: string }[] = []
+  let from = 0
+  while (true) {
+    const { data } = await getClient()
+      .from('cities')
+      .select('state_slug, city_slug')
+      .range(from, from + PAGE - 1)
+    if (!data || data.length === 0) break
+    all.push(...data)
+    if (data.length < PAGE) break
+    from += PAGE
+  }
+  return all
 }
 
 export async function getAllBusinessSlugs() {

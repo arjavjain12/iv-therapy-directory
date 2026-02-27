@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
     ],
     sitemap: [
       `${BASE_URL}/sitemap.xml`,
-      `${BASE_URL}/api/cities-sitemap.xml`,
+      `${BASE_URL}/cities-sitemap.xml`,
       `${BASE_URL}/api/businesses-sitemap.xml`,
       `${BASE_URL}/api/drip-city-sitemap.xml`,
     ],
