@@ -43,9 +43,9 @@ export default function ListingForm() {
     setErrorMsg('')
 
     try {
-      const res = await fetch('/api/list-business', {
+      const res = await fetch('https://formspree.io/f/xwvnjakk', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(form),
       })
 
