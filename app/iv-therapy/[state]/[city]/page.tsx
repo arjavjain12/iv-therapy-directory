@@ -84,6 +84,8 @@ export default async function CityPage({
     ? (businesses.reduce((acc, b) => acc + (b.rating ?? 0), 0) / businesses.length).toFixed(1)
     : null
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
+
   const citySchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -112,9 +114,32 @@ export default async function CityPage({
     })),
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'IV Therapy', item: `${BASE_URL}/iv-therapy` },
+      { '@type': 'ListItem', position: 3, name: stateName, item: `${BASE_URL}/iv-therapy/${stateSlug}` },
+      { '@type': 'ListItem', position: 4, name: `IV Therapy in ${city.city_name}`, item: `${BASE_URL}/iv-therapy/${stateSlug}/${citySlug}` },
+    ],
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <div className="bg-white border-b border-gray-100">
@@ -196,10 +221,35 @@ export default async function CityPage({
                   ))}
                 </div>
               ) : (
-                <div className="rounded-xl border border-dashed border-gray-300 p-10 text-center">
-                  <Droplets className="mx-auto mb-3 h-10 w-10 text-gray-300" />
-                  <p className="text-gray-500 font-medium">No listings yet for {city.city_name}</p>
-                  <p className="text-sm text-gray-400 mt-1">Fill out the form below and we&apos;ll find local IV therapy providers for you.</p>
+                <div className="space-y-6">
+                  <div className="rounded-xl border border-dashed border-sky-200 bg-sky-50 p-8 text-center">
+                    <Droplets className="mx-auto mb-3 h-10 w-10 text-sky-400" />
+                    <p className="font-semibold text-gray-800 text-lg">Building our {city.city_name} directory</p>
+                    <p className="text-sm text-gray-500 mt-1 max-w-md mx-auto">We&apos;re actively adding IV therapy providers in {city.city_name}. Fill out the form below and we&apos;ll match you with available local services.</p>
+                    <Link href="#quote" className="mt-4 inline-flex items-center gap-2 rounded-lg bg-sky-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-sky-700 transition">
+                      <Droplets className="h-4 w-4" /> Get Matched with a Provider
+                    </Link>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 bg-white p-6">
+                    <h3 className="font-bold text-gray-900 text-lg mb-3">IV Therapy Services Available in {city.city_name}, {stateName}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      IV therapy services in {city.city_name} typically include mobile IV services that come directly to your home, hotel, or office, as well as IV wellness clinics and medspas in the surrounding {city.county} area. Common treatments available include hangover recovery drips, Myers&apos; Cocktail infusions, NAD+ therapy, vitamin C infusions, and basic hydration IVs.
+                    </p>
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      {[
+                        { label: 'Hangover Recovery', href: `/iv-therapy/${stateSlug}/${citySlug}/hangover` },
+                        { label: "Myers' Cocktail", href: `/iv-therapy/${stateSlug}/${citySlug}/myers-cocktail` },
+                        { label: 'NAD+ Infusion', href: `/iv-therapy/${stateSlug}/${citySlug}/nad-plus` },
+                        { label: 'IV Hydration', href: `/iv-therapy/${stateSlug}/${citySlug}/hydration` },
+                        { label: 'Immunity Boost', href: `/iv-therapy/${stateSlug}/${citySlug}/immunity` },
+                        { label: 'Athletic Recovery', href: `/iv-therapy/${stateSlug}/${citySlug}/athletic` },
+                      ].map((item) => (
+                        <Link key={item.href} href={item.href} className="flex items-center gap-1.5 text-sky-600 hover:text-sky-700 transition">
+                          <ArrowRight className="h-3.5 w-3.5 shrink-0" />{item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>

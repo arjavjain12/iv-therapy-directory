@@ -22,6 +22,11 @@ const DRIP_IMAGES: Record<string, string> = {
   'ozone': 'drip-ozone.png',
   'detox': 'drip-detox.png',
   'glutathione': 'drip-beauty.png',
+  'iron': 'drip-hydration.png',
+  'ketamine': 'drip-nad.png',
+  'high-dose-vitamin-c': 'drip-vitaminc.png',
+  'chelation': 'drip-detox.png',
+  'magnesium': 'drip-myers.png',
 }
 
 export async function generateStaticParams() {

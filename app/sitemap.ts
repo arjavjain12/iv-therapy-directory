@@ -48,12 +48,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/iv-therapy-for-morning-sickness`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/iv-therapy-for-fibromyalgia`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE_URL}/iv-therapy-for-long-covid`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/iv-therapy-for-ms`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/iv-therapy-for-cancer`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
   // ── Drip type pages ───────────────────────────────────────────────────────────
   const dripTypes = [
     'hydration', 'myers-cocktail', 'nad-plus', 'vitamin-c', 'immunity',
     'hangover', 'beauty', 'athletic', 'b12', 'vitamin-d', 'ozone', 'detox', 'glutathione',
+    'iron', 'ketamine', 'high-dose-vitamin-c', 'chelation', 'magnesium',
   ]
   const dripPages: MetadataRoute.Sitemap = dripTypes.map((slug) => ({
     url: `${BASE_URL}/iv-drip-types/${slug}`,
