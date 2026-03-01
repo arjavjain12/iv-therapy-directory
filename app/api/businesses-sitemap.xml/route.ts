@@ -13,14 +13,24 @@ export async function GET() {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     )
 
-    // Join businesses with cities to get state/city slugs
-    const { data: businesses } = await supabase
-      .from('businesses')
-      .select('slug, updated_at, cities(state_slug, city_slug)')
-      .eq('is_active', true)
-      .order('updated_at', { ascending: false })
+    // Join businesses with cities — paginate past Supabase 1000-row limit
+    const PAGE = 1000
+    const businesses: { slug: string; updated_at: string; cities: unknown }[] = []
+    let from = 0
+    while (true) {
+      const { data } = await supabase
+        .from('businesses')
+        .select('slug, updated_at, cities(state_slug, city_slug)')
+        .eq('is_active', true)
+        .order('updated_at', { ascending: false })
+        .range(from, from + PAGE - 1)
+      if (!data || data.length === 0) break
+      businesses.push(...data)
+      if (data.length < PAGE) break
+      from += PAGE
+    }
 
-    if (!businesses?.length) {
+    if (!businesses.length) {
       return new NextResponse('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
         headers: { 'Content-Type': 'application/xml' },
       })

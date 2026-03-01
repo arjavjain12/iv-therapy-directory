@@ -12,7 +12,7 @@ export async function GET() {
     )
   }
 
-  // Include cities with population >= 10k (~5k cities) for broad coverage
+  // Include cities with population >= 50k (~700 cities) — keeps sitemap under 50k URL limit and within serverless timeout
   const results: { state_slug: string; city_slug: string }[] = []
   const PAGE = 1000
   let from = 0
@@ -21,7 +21,7 @@ export async function GET() {
     const { data } = await getClient()
       .from('cities')
       .select('state_slug, city_slug')
-      .gte('population', 10000)
+      .gte('population', 50000)
       .order('population', { ascending: false })
       .range(from, from + PAGE - 1)
     if (!data || data.length === 0) break
