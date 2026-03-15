@@ -49,6 +49,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/iv-drip-types/${type}` },
+    openGraph: { title, description, url: `/iv-drip-types/${type}` },
   }
 }
 

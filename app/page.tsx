@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Search, Shield, Clock, MapPin, ArrowRight, CheckCircle, Droplets } from 'lucide-react'
@@ -5,6 +6,15 @@ import { STATE_NAMES } from '@/lib/utils'
 import { getPopularCities } from '@/lib/supabase'
 import HowIVWorksInfographic from '@/components/infographics/HowIVWorksInfographic'
 import DripTypesInfographic from '@/components/infographics/DripTypesInfographic'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'IVList — Find IV Therapy Clinics & Mobile IV Near You',
+    description: 'Find and compare IV therapy clinics, IV bars, and mobile IV services in your city.',
+    url: '/',
+  },
+}
 
 export default async function Home() {
   let popularCities: Array<{ id: number; city_name: string; state: string; state_slug: string; city_slug: string }> = []

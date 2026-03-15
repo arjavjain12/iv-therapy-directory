@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { STATE_NAMES } from '@/lib/utils'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -77,5 +78,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }))
 
-  return [...staticPages, ...dripPages, ...categoryPages]
+  // ── State pages ──────────────────────────────────────────────────────────────
+  const statePages: MetadataRoute.Sitemap = Object.keys(STATE_NAMES).map((slug) => ({
+    url: `${BASE_URL}/iv-therapy/${slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...dripPages, ...categoryPages, ...statePages]
 }

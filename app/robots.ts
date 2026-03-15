@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/api/businesses-sitemap.xml', '/api/drip-city-sitemap.xml'],
         disallow: ['/api/', '/admin/'],
       },
       // Explicit AI bot access for GEO (Generative Engine Optimization)

@@ -24,11 +24,12 @@ export async function generateMetadata({
   const { state } = await params
   const data = await getStateData(state)
   if (!data) return { title: 'Not Found' }
-  const title = `IV Therapy in ${data.stateName} | Find Local Clinics & Mobile IV by City`
+  const title = `IV Therapy in ${data.stateName} — Clinics by City`
   const description = `Compare IV therapy clinics and mobile IV services across ${data.stateName}. Browse ${data.cities.length}+ cities and find hangover recovery, Myers' Cocktail, NAD+, and more.`
   return {
     title, description,
     alternates: { canonical: `/iv-therapy/${state}` },
+    openGraph: { title, description, url: `/iv-therapy/${state}` },
   }
 }
 
@@ -64,9 +65,20 @@ export default async function StatePage({
     })),
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(stateSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

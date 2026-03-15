@@ -39,7 +39,7 @@ export async function generateMetadata({
 
   const { city: c, businesses } = data
   const stateName = STATE_NAMES[state] ?? titleCase(state)
-  const title = `IV Therapy in ${c.city_name}, ${c.state} (2026) | Clinics & Mobile IV`
+  const title = `IV Therapy in ${c.city_name}, ${c.state} — Clinics & Pricing`
   const description = `Find IV therapy clinics and mobile IV services in ${c.city_name}, ${stateName}. Compare ${businesses.length > 0 ? businesses.length + ' local providers,' : ''} pricing for hangover recovery, Myers' Cocktail, NAD+, and more.`
 
   return {
@@ -308,8 +308,12 @@ export default async function CityPage({
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                 ))}
-                <Link href="/iv-therapy-drip-recommender"
+                <Link href="/iv-drip-types"
                   className="flex items-center gap-1 text-sm font-medium text-sky-600 hover:text-sky-700 mt-2">
+                  View all drip types <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link href="/iv-therapy-drip-recommender"
+                  className="flex items-center gap-1 text-sm font-medium text-sky-600 hover:text-sky-700 mt-1">
                   Take the drip quiz <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
