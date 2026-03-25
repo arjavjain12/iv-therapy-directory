@@ -1,21 +1,38 @@
-// Generate city-specific FAQ items for IV therapy
-export function getCityFAQs(cityName: string, state: string) {
+interface CityFAQData {
+  providerCount?: number
+  hasMobile?: boolean
+  priceLow?: number
+  priceHigh?: number
+}
+
+// Generate city-specific FAQ items for IV therapy — uses real data when available
+export function getCityFAQs(cityName: string, state: string, data?: CityFAQData) {
+  const count = data?.providerCount ?? 0
+  const hasMobile = data?.hasMobile ?? true
+  const pLow = data?.priceLow
+  const pHigh = data?.priceHigh
+  const priceRange = pLow && pHigh ? `$${pLow}–$${pHigh}` : '$99–$500'
+
   return [
     {
       question: `How much does IV therapy cost in ${cityName}?`,
-      answer: `IV therapy in ${cityName}, ${state} typically costs $99–$500 per session depending on the drip type. A basic hydration drip averages $99–$175, while a Myers' Cocktail runs $149–$275. Premium NAD+ therapy can reach $250–$500. Prices vary by provider, clinic type, and whether you choose in-clinic or mobile IV service. Use our quote form to compare local rates.`,
+      answer: `IV therapy in ${cityName}, ${state} typically costs ${priceRange} per session depending on the drip type. A basic hydration drip averages $99–$175, while a Myers' Cocktail runs $149–$275. Premium NAD+ therapy can reach $250–$500.${count > 0 ? ` Compare prices from ${count} local provider${count > 1 ? 's' : ''} in our directory.` : ' Prices vary by provider, clinic type, and whether you choose in-clinic or mobile IV service.'}`,
     },
     {
       question: `Is there mobile IV therapy available in ${cityName}?`,
-      answer: `Yes — mobile IV therapy is available in ${cityName} and surrounding areas. A licensed nurse or medical professional comes directly to your home, hotel, or office. Mobile IV sessions typically cost $20–$50 more than in-clinic visits due to the travel convenience. Response times range from 45 minutes to a few hours depending on demand and location within ${state}.`,
+      answer: hasMobile
+        ? `Yes — mobile IV therapy is available in ${cityName} and surrounding areas. A licensed nurse or medical professional comes directly to your home, hotel, or office. Mobile IV sessions typically cost $20–$50 more than in-clinic visits due to the travel convenience. Response times range from 45 minutes to a few hours depending on demand and location within ${state}.`
+        : `Mobile IV therapy may be available in the greater ${cityName} area. While our current listings focus on in-clinic providers, mobile IV services are expanding rapidly across ${state}. Contact local providers to ask about home or hotel delivery options. Mobile sessions typically add $20–$50 to the base treatment price.`,
+    },
+    {
+      question: `How many IV therapy providers are in ${cityName}?`,
+      answer: count > 0
+        ? `Our directory currently lists ${count} IV therapy provider${count > 1 ? 's' : ''} in ${cityName}, ${state}. This includes IV clinics, medical spas, wellness centers, and mobile IV services.${count > 5 ? ` With ${count} options, you can compare ratings, pricing, and services to find the best fit.` : ' We regularly add new providers as the market grows.'}`
+        : `We are actively building our ${cityName} provider directory. IV therapy is growing rapidly in ${state}, and new clinics and mobile services are opening regularly. Submit a quote request and we'll match you with available providers in your area.`,
     },
     {
       question: `How long does an IV therapy session take in ${cityName}?`,
       answer: `Most IV therapy sessions in ${cityName} take 30–90 minutes depending on the drip. A basic hydration drip takes about 30 minutes. A Myers' Cocktail or vitamin C drip takes 45–60 minutes. NAD+ infusions are the longest, often running 60–90+ minutes. Add 10–15 minutes for intake and setup at your appointment.`,
-    },
-    {
-      question: `Do I need a prescription or doctor's order for IV therapy in ${cityName}?`,
-      answer: `Most IV therapy clinics in ${cityName} do not require a prior prescription — they operate under a medical director who oversees protocols. You'll typically complete a health intake form and have a brief consultation before your first session. If you have serious health conditions, the clinician may recommend physician clearance first.`,
     },
     {
       question: `Is IV therapy safe in ${cityName}?`,

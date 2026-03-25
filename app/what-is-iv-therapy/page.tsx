@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ReviewedBy from '@/components/ReviewedBy'
 import MedicalDisclaimer from '@/components/MedicalDisclaimer'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -105,6 +106,52 @@ export default function WhatIsIVTherapyPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+        {/* Key Takeaways — optimized for AI citation */}
+        <KeyTakeaways items={[
+          'IV therapy delivers vitamins and fluids directly into your bloodstream at 100% bioavailability, bypassing digestive absorption limits.',
+          'Sessions take 30–90 minutes and are administered by licensed registered nurses (RNs) under physician oversight.',
+          'Costs range from $99 (basic hydration) to $500 (NAD+ therapy). Mobile IV services add $25–$50.',
+          'The most popular drip types are hydration, Myers\' Cocktail, hangover recovery, NAD+, and immunity boost.',
+          'IV therapy is generally safe when administered by licensed professionals. It is not a substitute for medical treatment.',
+        ]} />
+
+        {/* IV Therapy Comparison Table — structured for AI and featured snippets */}
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">IV Therapy at a Glance: Cost, Duration & Use Cases</h2>
+          <div className="overflow-x-auto rounded-xl border border-gray-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-gray-50 text-left">
+                  <th className="px-4 py-3 font-semibold text-gray-900">Drip Type</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">Cost</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">Duration</th>
+                  <th className="px-4 py-3 font-semibold text-gray-900">Best For</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { drip: 'IV Hydration', cost: '$99–$175', time: '30 min', use: 'Dehydration, hangovers, travel fatigue' },
+                  { drip: "Myers' Cocktail", cost: '$149–$275', time: '45 min', use: 'General wellness, fatigue, migraines' },
+                  { drip: 'Hangover Recovery', cost: '$125–$250', time: '45 min', use: 'Post-alcohol recovery, nausea, headache' },
+                  { drip: 'NAD+', cost: '$250–$500', time: '90 min', use: 'Anti-aging, cognitive function, energy' },
+                  { drip: 'Immunity Boost', cost: '$149–$250', time: '45 min', use: 'Cold/flu prevention, travel, immune support' },
+                  { drip: 'Vitamin C (High-Dose)', cost: '$125–$600', time: '45–90 min', use: 'Immune support, skin health, cancer adjunct' },
+                  { drip: 'Beauty (Glutathione)', cost: '$150–$275', time: '45 min', use: 'Skin brightening, anti-aging, hair/nails' },
+                  { drip: 'Athletic Performance', cost: '$149–$299', time: '45 min', use: 'Muscle recovery, endurance, competition prep' },
+                ].map((row) => (
+                  <tr key={row.drip} className="hover:bg-gray-50">
+                    <td className="px-4 py-3 font-medium text-gray-900">{row.drip}</td>
+                    <td className="px-4 py-3 text-emerald-600 font-medium">{row.cost}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.time}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.use}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-gray-500">Prices are national averages. Actual costs vary by city, provider, and add-ons. Mobile services add $25–$50.</p>
+        </section>
 
         {/* How it works */}
         <section>

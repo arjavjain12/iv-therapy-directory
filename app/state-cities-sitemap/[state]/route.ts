@@ -34,13 +34,22 @@ export async function GET(
     )
   }
 
+  // Only include cities that have at least one active business (avoid thin pages in sitemap)
   const { data: cities } = await getClient()
     .from('cities')
-    .select('city_slug')
+    .select('city_slug, businesses!inner(id)')
     .eq('state_slug', state)
+    .eq('businesses.is_active', true)
     .order('population', { ascending: false })
 
+  // Deduplicate (join may return multiple rows per city)
+  const seen = new Set<string>()
   const urls = (cities || [])
+    .filter((c) => {
+      if (seen.has(c.city_slug)) return false
+      seen.add(c.city_slug)
+      return true
+    })
     .map(
       (c) =>
         `  <url><loc>${escapeXml(`${BASE_URL}/iv-therapy/${state}/${c.city_slug}`)}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>`

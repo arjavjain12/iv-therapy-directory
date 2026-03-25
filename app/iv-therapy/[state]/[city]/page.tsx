@@ -53,6 +53,13 @@ export async function generateMetadata({
       description,
       url: `/iv-therapy/${state}/${city}`,
     },
+    // noindex pages with zero providers to avoid thin content in Google's index
+    ...(businesses.length === 0 && {
+      robots: {
+        index: false,
+        follow: true,
+      },
+    }),
   }
 }
 
@@ -79,7 +86,15 @@ export default async function CityPage({
   const { city, businesses, pricing, nearby } = data
   const stateName = STATE_NAMES[stateSlug] ?? titleCase(stateSlug)
   const stateAbbr = Object.entries(STATE_NAMES).find(([, v]) => v === stateName)?.[0]?.toUpperCase() ?? ''
-  const faqs = getCityFAQs(city.city_name, stateName)
+  const hasMobile = businesses.some((b) => b.is_mobile)
+  const priceLow = pricing.length > 0 ? Math.min(...pricing.map((p: { price_low: number }) => p.price_low)) : undefined
+  const priceHigh = pricing.length > 0 ? Math.max(...pricing.map((p: { price_high: number }) => p.price_high)) : undefined
+  const faqs = getCityFAQs(city.city_name, stateName, {
+    providerCount: businesses.length,
+    hasMobile,
+    priceLow,
+    priceHigh,
+  })
   const avgRating = businesses.length
     ? (businesses.reduce((acc, b) => acc + (b.rating ?? 0), 0) / businesses.length).toFixed(1)
     : null
