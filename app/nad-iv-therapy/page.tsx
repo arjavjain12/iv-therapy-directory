@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import ReviewedBy from '@/components/ReviewedBy'
 import MedicalDisclaimer from '@/components/MedicalDisclaimer'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 export const metadata: Metadata = {
   title: 'NAD+ IV Therapy — Complete Guide (2026) | Benefits, Cost & Side Effects',
@@ -85,6 +86,14 @@ export default function NADIVTherapyPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+
+        <KeyTakeaways items={[
+          'NAD+ IV therapy costs $250–$500 per session with a typical infusion time of 60–90 minutes.',
+          'NAD+ levels naturally decline by approximately 50% between age 20 and 50, contributing to fatigue and cognitive decline.',
+          'Primary uses include anti-aging, cognitive enhancement, athletic performance, and addiction recovery support.',
+          'NAD+ requires a slow infusion rate — infusing too quickly causes chest tightness, flushing, and nausea.',
+          'All NAD+ IV infusions are administered by licensed registered nurses under physician medical director oversight.',
+        ]} />
 
         {/* Stats Strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

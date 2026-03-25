@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MapPin } from 'lucide-react'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { DEFAULT_PRICING, DRIP_TYPES, formatPrice } from '@/lib/utils'
@@ -141,6 +141,34 @@ export default function DripTypesHubPage() {
 
         {/* FAQ */}
         <FAQ items={FAQS} title="IV Drip Types — Frequently Asked Questions" />
+
+        {/* City cross-links */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Find IV Therapy Providers by City</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {[
+              { href: '/iv-therapy/california/los-angeles', label: 'Los Angeles' },
+              { href: '/iv-therapy/florida/miami', label: 'Miami' },
+              { href: '/iv-therapy/texas/austin', label: 'Austin' },
+              { href: '/iv-therapy/texas/houston', label: 'Houston' },
+              { href: '/iv-therapy/nevada/las-vegas', label: 'Las Vegas' },
+              { href: '/iv-therapy/new-york/new-york-city', label: 'New York City' },
+              { href: '/iv-therapy/arizona/scottsdale', label: 'Scottsdale' },
+              { href: '/iv-therapy/illinois/chicago', label: 'Chicago' },
+              { href: '/iv-therapy/colorado/denver', label: 'Denver' },
+              { href: '/iv-therapy/georgia/atlanta', label: 'Atlanta' },
+            ].map((city) => (
+              <Link
+                key={city.href}
+                href={city.href}
+                className="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:border-sky-300 hover:text-sky-600 transition"
+              >
+                <MapPin className="h-4 w-4 text-gray-400 shrink-0" />
+                {city.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   )

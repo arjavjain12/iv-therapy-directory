@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { DEFAULT_PRICING, DRIP_TYPES, formatPrice } from '@/lib/utils'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 export const metadata: Metadata = {
   title: 'IV Therapy Cost Guide (2026) — How Much Does IV Therapy Cost?',
@@ -71,6 +72,14 @@ export default function IVTherapyCostPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <KeyTakeaways items={[
+          'Basic IV hydration costs $99–$175 per session; Myers\' Cocktail runs $149–$275; NAD+ therapy is $250–$500 per session.',
+          'Mobile IV therapy typically adds a $25–$50 travel fee on top of the base treatment price.',
+          'Most health insurance does not cover elective IV therapy — though some HSA/FSA accounts may apply with a doctor\'s prescription.',
+          'Pricing varies significantly by city, provider type (clinic vs. mobile), and the specific drip formula chosen.',
+          'Monthly memberships ($79–$149/month) can reduce per-session costs by 30–50% for regular users.',
+        ]} />
 
         {/* Pricing table */}
         <h2 className="text-2xl font-bold text-gray-900 mb-4">IV Therapy Pricing by Drip Type</h2>

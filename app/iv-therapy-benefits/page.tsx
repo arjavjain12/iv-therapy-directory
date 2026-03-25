@@ -6,6 +6,7 @@ import FAQ from '@/components/FAQ'
 import BenefitsInfographic from '@/components/infographics/BenefitsInfographic'
 import ReviewedBy from '@/components/ReviewedBy'
 import MedicalDisclaimer from '@/components/MedicalDisclaimer'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 export const metadata: Metadata = {
   title: 'IV Therapy Benefits — What Are the Benefits of IV Therapy?',
@@ -62,6 +63,15 @@ export default function IVTherapyBenefitsPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+
+        <KeyTakeaways items={[
+          'IV therapy delivers nutrients at 100% bioavailability compared to just 20–50% absorption from oral supplements.',
+          'Most patients feel the effects of IV therapy within 30–60 minutes of starting the infusion.',
+          'Popular use cases include hangover recovery, immune support, athletic performance, anti-aging, and skin brightening.',
+          'Sessions typically take 30–90 minutes depending on the drip formula — NAD+ infusions take the longest.',
+          'IV therapy is complementary wellness care — it is not a replacement for medical treatment of diagnosed conditions.',
+        ]} />
+
         <BenefitsInfographic />
 
         <div>

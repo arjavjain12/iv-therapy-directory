@@ -49,6 +49,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/iv-therapy-for-long-covid`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/iv-therapy-for-ms`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/iv-therapy-for-cancer`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/iv-therapy-for-migraines`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/iv-therapy-for-flu`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE_URL}/iv-therapy-for-athletes`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
   ]
 
   // ── Drip type pages ───────────────────────────────────────────────────────────

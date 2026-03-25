@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import { CATEGORY_DATA } from '@/lib/category-data'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 export const metadata: Metadata = {
   title: 'Mobile IV Therapy — IV Drips Delivered to Your Door (2026)',
@@ -62,6 +63,15 @@ export default function MobileIVTherapyPage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+
+        <KeyTakeaways items={[
+          'Mobile IV therapy sends a licensed nurse directly to your home, hotel, office, or event location.',
+          'Typical response time from booking to nurse arrival is 45 minutes to 2 hours depending on your area.',
+          'Mobile service adds $25–$50 to the base treatment cost compared to visiting an in-clinic location.',
+          'Available in most major US cities including NYC, Los Angeles, Miami, Las Vegas, Dallas, and Chicago.',
+          'Same treatments offered as in-clinic: hydration, Myers\' Cocktail, NAD+, hangover recovery, immunity boost, and more.',
+        ]} />
+
         <p className="text-gray-600 leading-relaxed text-lg">{data.intro}</p>
 
         <div>

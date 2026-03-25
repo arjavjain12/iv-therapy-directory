@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import ReviewedBy from '@/components/ReviewedBy'
 import MedicalDisclaimer from '@/components/MedicalDisclaimer'
+import KeyTakeaways from '@/components/KeyTakeaways'
 
 export const metadata: Metadata = {
   title: 'Is IV Therapy Safe? — Risks, Safety Standards & What to Know',
@@ -61,6 +62,15 @@ export default function IsIVTherapySafePage() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+
+        <KeyTakeaways items={[
+          'IV therapy is generally safe when administered by licensed registered nurses (RNs) using pharmaceutical-grade solutions.',
+          'The most common side effect is minor bruising or discomfort at the IV insertion site.',
+          'Key contraindications include chronic kidney disease, congestive heart failure, and G6PD deficiency (for high-dose vitamin C).',
+          'Always verify that your provider operates under a licensed physician medical director and uses single-use sterile supplies.',
+          'IV therapy is complementary wellness care — it is not a substitute for medical treatment of serious health conditions.',
+        ]} />
+
         <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-3">The Short Answer</h2>
           <p className="text-gray-700">Yes — IV therapy administered by licensed medical professionals using pharmaceutical-grade solutions is generally safe for healthy adults. The risks are low when proper protocols are followed. Always choose a provider that employs licensed RNs and operates under a physician medical director.</p>
