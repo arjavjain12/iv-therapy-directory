@@ -1,7 +1,12 @@
-import { createClient } from '@supabase/supabase-js'
 import { STATE_NAMES } from '@/lib/utils'
+import { getClient, isConfigured } from '@/lib/supabase'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
+
+// Build a set of valid full-name state slugs for validation
+const VALID_STATE_SLUGS = new Set(
+  Object.values(STATE_NAMES).map((name) => name.toLowerCase().replace(/\s+/g, '-'))
+)
 
 function escapeXml(str: string): string {
   return str
@@ -18,15 +23,18 @@ export async function GET(
 ) {
   const { state } = await params
 
-  if (!STATE_NAMES[state]) {
+  if (!VALID_STATE_SLUGS.has(state)) {
     return new Response('Not found', { status: 404 })
   }
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  const supabase = createClient(url, key)
+  if (!isConfigured()) {
+    return new Response(
+      '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>',
+      { headers: { 'Content-Type': 'application/xml' } },
+    )
+  }
 
-  const { data: cities } = await supabase
+  const { data: cities } = await getClient()
     .from('cities')
     .select('city_slug')
     .eq('state_slug', state)

@@ -39,7 +39,7 @@ export default function Footer() {
                 <Droplets className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold text-white text-lg">
-                IVTherapy<span className="text-sky-400">Listing</span>
+                IV<span className="text-sky-400">List</span>
               </span>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed">

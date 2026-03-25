@@ -79,8 +79,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // ── State pages ──────────────────────────────────────────────────────────────
-  const statePages: MetadataRoute.Sitemap = Object.keys(STATE_NAMES).map((slug) => ({
-    url: `${BASE_URL}/iv-therapy/${slug}`,
+  const statePages: MetadataRoute.Sitemap = Object.values(STATE_NAMES).map((name) => ({
+    url: `${BASE_URL}/iv-therapy/${name.toLowerCase().replace(/\s+/g, '-')}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,

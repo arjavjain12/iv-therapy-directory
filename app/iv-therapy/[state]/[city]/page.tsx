@@ -102,7 +102,7 @@ export default async function CityPage({
           '@type': 'PostalAddress',
           streetAddress: b.address,
           addressLocality: city.city_name,
-          addressRegion: stateSlug.toUpperCase(),
+          addressRegion: stateAbbr,
           addressCountry: 'US',
         },
         telephone: b.phone ?? undefined,
