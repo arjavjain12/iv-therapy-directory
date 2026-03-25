@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 export const metadata: Metadata = {
   title: 'NAD+ IV Therapy — Complete Guide (2026) | Benefits, Cost & Side Effects',
@@ -78,6 +80,7 @@ export default function NADIVTherapyPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             NAD+ IV therapy delivers the essential longevity coenzyme directly into your bloodstream for cellular energy, DNA repair, cognitive clarity, and anti-aging — at concentrations impossible to achieve orally.
           </p>
+          <ReviewedBy date="March 2026" />
         </div>
       </div>
 
@@ -365,6 +368,8 @@ export default function NADIVTherapyPage() {
           items={FAQS}
           title="NAD+ IV Therapy — Frequently Asked Questions"
         />
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

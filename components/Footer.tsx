@@ -127,6 +127,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Medical Disclaimer */}
+        <div className="border-t border-gray-800 pt-6 pb-6">
+          <p className="text-xs text-gray-500 leading-relaxed max-w-4xl">
+            <span className="font-semibold text-gray-400">Medical Disclaimer:</span>{' '}
+            The information provided on IVList.com is for informational and educational purposes only and should not be considered medical advice. IV therapy should only be administered by licensed medical professionals. Individual results may vary. Always consult with a qualified healthcare provider before beginning any IV therapy treatment, especially if you have pre-existing medical conditions, are pregnant, or are taking medications. IVList does not provide medical services and is not a healthcare provider.
+          </p>
+        </div>
+
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} IVList. All rights reserved.
@@ -134,6 +142,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
+            <Link href="/about" className="hover:text-gray-300 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
           </div>
         </div>

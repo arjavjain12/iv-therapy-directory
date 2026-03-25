@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -87,6 +89,7 @@ export default function IVTherapyForCancerPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Integrative oncology uses IV therapy to support cancer patients through treatment — managing side effects, replenishing depleted nutrients, and maintaining quality of life. Here&apos;s what the evidence shows and what to know before starting.
           </p>
+          <ReviewedBy date="March 2026" />
         </div>
       </div>
 
@@ -166,6 +169,8 @@ export default function IVTherapyForCancerPage() {
             Find Providers Near Me
           </Link>
         </section>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

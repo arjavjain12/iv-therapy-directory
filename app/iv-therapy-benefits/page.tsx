@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
 import BenefitsInfographic from '@/components/infographics/BenefitsInfographic'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 export const metadata: Metadata = {
   title: 'IV Therapy Benefits — What Are the Benefits of IV Therapy?',
@@ -47,6 +49,7 @@ export default function IVTherapyBenefitsPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to the benefits of intravenous nutrient therapy — from rapid hydration to cellular anti-aging.
           </p>
+          <ReviewedBy date="March 2026" />
           <Image
             src="/images/content-benefits.png"
             alt="Person feeling energetic and healthy after IV therapy"
@@ -103,6 +106,8 @@ export default function IVTherapyBenefitsPage() {
             ))}
           </div>
         </div>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

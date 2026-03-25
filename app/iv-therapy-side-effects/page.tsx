@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 export const metadata: Metadata = {
   title: "IV Therapy Side Effects — What to Expect & When to Worry (2026)",
@@ -62,6 +64,7 @@ export default function IVTherapySideEffectsPage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             A complete guide to what you might experience during and after an IV therapy session — and when to take action.
           </p>
+          <ReviewedBy date="March 2026" />
         </div>
       </div>
 
@@ -248,6 +251,7 @@ export default function IVTherapySideEffectsPage() {
           </div>
         </div>
 
+        <MedicalDisclaimer />
       </div>
     </>
   )

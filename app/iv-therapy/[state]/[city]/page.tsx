@@ -96,8 +96,10 @@ export default async function CityPage({
       '@type': 'ListItem',
       position: i + 1,
       item: {
-        '@type': 'LocalBusiness',
+        '@type': 'MedicalBusiness',
+        '@id': `https://ivlist.com/iv-therapy/${stateSlug}/${citySlug}#business-${b.id}`,
         name: b.name,
+        medicalSpecialty: 'InfusionTherapy',
         address: {
           '@type': 'PostalAddress',
           streetAddress: b.address,
@@ -107,6 +109,7 @@ export default async function CityPage({
         },
         telephone: b.phone ?? undefined,
         url: b.website ?? undefined,
+        priceRange: '$$',
         aggregateRating: b.rating
           ? { '@type': 'AggregateRating', ratingValue: b.rating, reviewCount: b.review_count }
           : undefined,

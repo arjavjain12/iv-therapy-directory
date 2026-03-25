@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -79,6 +81,7 @@ export default function IVTherapyForAnxietyPage() {
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
           Anxiety has real biochemical roots — magnesium deficiency, B vitamin depletion, HPA axis dysregulation, and chronic dehydration all heighten the nervous system&apos;s stress response. IV therapy delivers calming nutrients at therapeutic concentrations, providing faster and more complete relief than oral supplements for those with anxiety driven by nutrient deficiencies.
         </p>
+        <ReviewedBy date="March 2026" />
 
         <div className="space-y-10">
           <section>
@@ -164,6 +167,8 @@ export default function IVTherapyForAnxietyPage() {
             </div>
           </section>
         </div>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

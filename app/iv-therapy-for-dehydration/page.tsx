@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -94,6 +96,7 @@ export default function IVTherapyForDehydrationPage() {
           <p className="text-lg text-gray-600 leading-relaxed">
             IV fluids for dehydration deliver saline, electrolytes, and vitamins directly into your bloodstream — achieving full hydration in 30 minutes. Drinking water takes 45–120 minutes to absorb, and far less is absorbed when you&apos;re already dehydrated or nauseous. IV rehydration is used by athletes, medical professionals, and anyone who needs to recover fast.
           </p>
+          <ReviewedBy date="March 2026" />
         </div>
       </div>
 
@@ -256,6 +259,8 @@ export default function IVTherapyForDehydrationPage() {
             ))}
           </div>
         </section>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

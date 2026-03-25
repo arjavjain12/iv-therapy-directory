@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -98,6 +100,7 @@ export default function WhatIsIVTherapyPage() {
           <p className="text-lg text-gray-600 leading-relaxed">
             IV therapy (intravenous therapy) delivers vitamins, minerals, fluids, and medications directly into your bloodstream through a small catheter in your vein. Unlike supplements you swallow, IV nutrients bypass your digestive system entirely — achieving 100% bioavailability immediately. A nurse places the IV, and you relax for 30–90 minutes while the drip runs.
           </p>
+          <ReviewedBy date="March 2026" />
         </div>
       </div>
 
@@ -227,6 +230,8 @@ export default function WhatIsIVTherapyPage() {
             ))}
           </div>
         </section>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

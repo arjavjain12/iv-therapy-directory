@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import FAQ from '@/components/FAQ'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 export const metadata: Metadata = {
   title: 'Is IV Therapy Safe? — Risks, Safety Standards & What to Know',
@@ -46,6 +48,7 @@ export default function IsIVTherapySafePage() {
           <p className="mt-3 max-w-2xl text-gray-600">
             Evidence-based guide to IV therapy safety — risks, who should avoid it, and how to choose a safe provider.
           </p>
+          <ReviewedBy date="March 2026" />
           <Image
             src="/images/content-safe.png"
             alt="Licensed nurse preparing IV therapy safely"
@@ -99,6 +102,8 @@ export default function IsIVTherapySafePage() {
             ))}
           </div>
         </div>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

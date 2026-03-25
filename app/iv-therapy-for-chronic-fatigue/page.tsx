@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ReviewedBy from '@/components/ReviewedBy'
+import MedicalDisclaimer from '@/components/MedicalDisclaimer'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'
 
@@ -79,6 +81,7 @@ export default function IVTherapyForChronicFatiguePage() {
         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
           Chronic fatigue syndrome (CFS/ME) causes debilitating exhaustion that doesn&apos;t improve with rest — often rooted in mitochondrial dysfunction, nutrient depletion, and oxidative stress. IV therapy delivers targeted nutrients directly to cells, bypassing the gut absorption issues common in CFS and providing faster, higher-concentration results than oral supplements.
         </p>
+        <ReviewedBy date="March 2026" />
 
         <div className="space-y-10">
           <section>
@@ -170,6 +173,8 @@ export default function IVTherapyForChronicFatiguePage() {
             </div>
           </section>
         </div>
+
+        <MedicalDisclaimer />
       </div>
     </>
   )

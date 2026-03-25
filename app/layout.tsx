@@ -64,14 +64,6 @@ const organizationSchema = {
       url: 'https://ivlist.com',
       name: 'IVList',
       publisher: { '@id': 'https://ivlist.com/#organization' },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: 'https://ivlist.com/iv-therapy/{search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-      },
     },
   ],
 }
