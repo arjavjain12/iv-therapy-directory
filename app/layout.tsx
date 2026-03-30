@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ivlist.com'}/rss.xml`,
+    },
+  },
   robots: {
     index: true,
     follow: true,
