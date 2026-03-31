@@ -144,7 +144,7 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
             <Link href="/about" className="hover:text-gray-300 transition-colors">About</Link>
             <Link href="/contact" className="hover:text-gray-300 transition-colors">Contact</Link>
-            <a href="/rss.xml" className="hover:text-gray-300 transition-colors">RSS Feed</a>
+            <Link href="/rss" className="hover:text-gray-300 transition-colors">RSS Feed</Link>
           </div>
         </div>
       </div>
